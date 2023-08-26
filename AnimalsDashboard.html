@@ -25,7 +25,7 @@
 
     <script>
         let tableHTML = '<table>'; // A string is initialized to hold the html for the table
-        tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>'; // Adds the header row for the table to the html string
+        tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th><th>Age Bracket</th></tr>'; // Adds the header row for the table to the html string
 
         const animals = [ // Object arrays for the animal data
             { id: 1, name: "Fluffy", owner: "Alice", weight: 12, age: 0.7 },
@@ -48,6 +48,7 @@
 
         for (const animal of animals)
         {
+            const ageBracket = getAgeBracket(animal.age); // Calculate the age bracket
             tableHTML += `
                 <tr>
                     <td>${animal.id}</td>
@@ -55,8 +56,25 @@
                     <td>${animal.owner}</td>
                     <td>${animal.weight}</td>
                     <td>${animal.age}</td>
+                    <td>${ageBracket}</td> <!-- Displays age bracket -->
                 </tr>
             `;
+        }
+
+
+        function getAgeBracket(age)
+        {
+            if (age === null || age === undefined) {
+                return ""; // Return an empty string if age is not provided
+            } else if (age <= 0.9) {
+                return "Puppy";
+            } else if (age <= 10) {
+                return "Adult";
+            } else if (age <= 15) {
+                return "Senior";
+            } else {
+                return "Geriatric";
+            }
         }
         
         tableHTML += '</table>'; // Closes the tag of the table
