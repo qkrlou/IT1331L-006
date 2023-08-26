@@ -24,16 +24,16 @@
     <div id='animal-table'></div>
 
     <script>
-        let tableHTML = '<table>';
-        tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>';
+        let tableHTML = '<table>'; // A string is initialized to hold the html for the table
+        tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>'; // Adds the header row for the table to the html string
 
-        const animals = [
+        const animals = [ // Object arrays for the animal data
             { id: 1, name: "Fluffy", owner: "Alice", weight: 12, age: 3 },
             { id: 2, name: "Max", owner: "Bob", weight: 20, age: 5 }
         ];
 
-        tableHTML += '</table>';
-        document.getElementById('animal-table').innerHTML = tableHTML;
+        tableHTML += '</table>'; // Closes the tag of the table
+        document.getElementById('animal-table').innerHTML = tableHTML; // Sets the inner html of the element with the ID 'animal-table' to the table HTML
     </script>
 </body>
 </html>
